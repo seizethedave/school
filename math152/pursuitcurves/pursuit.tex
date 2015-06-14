@@ -242,6 +242,53 @@ for the pirate ship to actually get closer to the merchant ship.)
 
 \section*{9.}
 
+We now have a differential equation that looks like:
+
+$$
+(x-1) \frac{dp}{dx}
+=
+-n \sqrt{1 + p^2(x)}
+$$
+
+We use separation of variables to take the integrals:
+
+$$
+\int \frac{1}{\sqrt{1 + p^2(x)}} dp
+=
+\int \frac{-n}{x-1} dx
+$$
+
+For the LHS, my computer gives me:
+
+$$
+\int \frac{1}{\sqrt{1 + p^2(x)}} dp
+=
+sinh^{-1}(p)
+$$
+
+Per the definition of $sinh^{-1}$:
+
+$$
+sinh^{-1}(p) = ln(p + \sqrt{p^2 + 1})
+$$
+
+For the RHS:
+
+$$
+\int \frac{-n}{x-1} dx
+\rightarrow
+n \cdot \int \frac{1}{1-x} dx
+$$
+
+$$ = -n \cdot ln(1-x) $$
+
+Altogether:
+
+$$
+ln(p + \sqrt{p^2 + 1})
+=
+-n \cdot ln(1-x)
+$$
 
 
 \end{document}
