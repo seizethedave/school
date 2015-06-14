@@ -22,7 +22,7 @@ merchant ship.}
 \section*{2.}
 
 Since both ships begin at the same $y$ coordinate and the merchant
-ship is constantly traveling due North, it makes sense that the pirate ship's path will be a non-linear, square-looking one.
+ship is constantly traveling due north, it makes sense that the pirate ship's path will be a non-linear, square-looking one.
 
 \section*{3.}
 
@@ -263,7 +263,7 @@ For the LHS, my computer gives me:
 $$
 \int \frac{1}{\sqrt{1 + p^2(x)}} dp
 =
-sinh^{-1}(p)
+sinh^{-1}(p) + C
 $$
 
 Per the definition of $sinh^{-1}$:
@@ -280,15 +280,50 @@ $$
 n \cdot \int \frac{1}{1-x} dx
 $$
 
-$$ = -n \cdot ln(1-x) $$
+$$ = -n \cdot ln(1-x) + C $$
 
 Altogether:
 
 $$
-ln(p + \sqrt{p^2 + 1})
+ln(p + \sqrt{p^2 + 1}) + C
 =
 -n \cdot ln(1-x)
 $$
+
+\section*{10.}
+
+When $t=0$, $x$ is also $0$. At this time, the instantaneous value of $p$, which was
+defined as $\frac{dy}{dx}$, will be $\frac{0}{something}$. That is, at this time
+the pirate ship will be proceeding due west directly at the merchant ship.
+$p_x$ will be changing and $p_y$ will not.
+
+Recalling our previous equation:
+$$
+ln(p + \sqrt{p^2 + 1}) + C
+=
+-n \cdot ln(1-x)
+$$
+We can plug in some values since we know that when $x=0$, $p$ is also $0$:
+$$
+ln(0 + \sqrt{0^2 + 1}) + C
+=
+-n \cdot ln(1-0)
+$$
+$$ ln(1) + C = -n \cdot ln(1) $$
+$$ C = 0 $$
+
+\section*{11.}
+
+Rearranging using various natural log rules:
+
+$$ ln(p + \sqrt{p^2 + 1}) = -n \cdot ln(1-x) $$
+$$ ln(p + \sqrt{p^2 + 1}) = -ln((1-x)^n) $$
+$$ ln(p + \sqrt{p^2 + 1}) + ln((1-x)^n) = 0 $$
+$$ ln\Big((p + \sqrt{p^2 + 1}) (1-x)^n \Big) = 0 $$
+$$ e^{ln((p + \sqrt{p^2 + 1}) (1-x)^n )} = e^0 $$
+$$(p + \sqrt{p^2 + 1}) (1-x)^n = 1$$
+
+\section*{12.}
 
 
 \end{document}
