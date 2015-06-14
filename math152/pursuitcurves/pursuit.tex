@@ -338,5 +338,45 @@ $$p = \frac{q^2 - 1}{2q}$$
 
 $$p = \frac{1}{2}(q - \frac{1}{q})$$
 
+Since $p = \frac{dy}{dx}$ and $q = (1-x)^{-n}$:
+
+$$\frac{dy}{dx} = \frac{1}{2}\Big((1-x)^{-n} - (1-x)^n\Big)$$
+
+\section*{13.}
+
+Integrate our result from \#12 in terms of $x$:
+
+$$\int \frac{dy}{dx} dx = \int \frac{1}{2}\Big((1-x)^{-n} - (1-x)^n\Big) dx$$
+
+LHS:
+
+$$\int \frac{dy}{dx} dx = y$$
+
+RHS:
+
+$$\int \frac{1}{2}\Big((1-x)^{-n} - (1-x)^n\Big) dx$$
+$$\frac{1}{2}\Big(\int(1-x)^{-n} dx - \int (1-x)^n dx\Big)$$
+
+Integrate the first term, $\int(1-x)^{-n} dx$. Let $u = 1-x$, $du = -dx$, $dx = -du$:
+$$-\int u^{-n} du = \frac{-u^{1-n}}{1-n}$$
+Back-substituting for $u$:
+$$ \frac{-(1-x)^{1-n}}{1-n} $$
+
+Integrate the second term, $\int(1-x)^{n} dx$.
+Again, let $u = 1-x$, $du = -dx$, $dx = -du$:
+$$-\int u^{n} du = \frac{-u^{n+1}}{1+n}$$
+Back-substituting for $u$:
+$$ \frac{-(1-x)^{n+1}}{1+n} $$
+
+Our RHS expression becomes:
+$$\frac{1}{2}\Big(\frac{(1-x)^{n+1}}{1+n} - \frac{(1-x)^{1-n}}{1-n}\Big)$$
+
+Factor a $(1-x)$ out of the interior:
+$$\frac{1}{2}(1-x)\Big(\frac{(1-x)^{n}}{1+n} - \frac{(1-x)^{-n}}{1-n}\Big)$$
+
+Altogether:
+$$y = \frac{1}{2}(1-x)\Bigg(\frac{(1-x)^{n}}{1+n} - \frac{(1-x)^{-n}}{1-n}\Bigg) + C$$
+
+
 
 \end{document}
