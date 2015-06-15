@@ -2,6 +2,8 @@
 \usepackage{graphicx}
 \usepackage{parskip}
 \usepackage{mathtools}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{caption}
 
 \title{Pursuit Curves}
 \author{David Grant}
@@ -294,7 +296,7 @@ $$
 
 When $t=0$, $x$ is also $0$. At this time, the instantaneous value of $p$, which was
 defined as $\frac{dy}{dx}$, will be $\frac{0}{something}$. That is, at this time
-the pirate ship will be proceeding due west directly at the merchant ship.
+the pirate ship will be proceeding due east directly at the merchant ship.
 $p_x$ will be changing and $p_y$ will not.
 
 Recalling our previous equation:
@@ -391,6 +393,44 @@ $$C =
 	\frac{n}{1-n^2}
 $$
 
+\section*{15.}
+
+Now we have a complete equation for the pirate ship's position:
+
+$$y = \frac{1}{2}(1-x)\Bigg(\frac{(1-x)^{n}}{1+n} - \frac{(1-x)^{-n}}{1-n}\Bigg) + \frac{n}{1-n^2} $$
+
+Cooking up a function in Mathematica:
+
+\includegraphics[width=300px]{pursuit-function}
+
+We can graph a bunch of different values of $n$. (See figure \ref{fig:pursuitgraphs}.)
+
+\section*{16.}
+
+As $n$ approaches $1$, the merchant ship is able to get further out
+in front of the pirate ship. The pirate ship is forced to turn north-bound more and more
+in order to chase the merchant.
+
+Contrasted with lower $n$ values (i.e., $0.1$), where the
+pirate ship is going significantly faster than the merchant ship,
+and is able to speed mostly due east to intercept the merchant.
+
+When I plot a few graphs where $n>1$, I get pirate ship trajectories that
+do not end, even for very high values of $y$.
+This makes sense, as the pirate ship is forever chasing a ship that it
+is outpaced by. (See figure \ref{fig:pursuitgraphs2}.)
+
+\begin{figure}
+\includegraphics[width=\linewidth]{pursuitgraphs}
+\caption{Graph of scenarios where $n<1$.}
+\label{fig:pursuitgraphs}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{pursuitgraphs2}
+\caption{Graph of scenarios where $n>1$.}
+\label{fig:pursuitgraphs2}
+\end{figure}
 
 
 \end{document}
